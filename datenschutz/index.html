@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheftrack | Datenschutz</title>
+  <meta name="description" content="Datenschutzerklaerung von Cheftrack.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #2D6A4F;
+      --ink: #1a1a1a;
+      --muted: #5f6b67;
+      --border: rgba(26, 26, 26, 0.08);
+      --shadow: 0 24px 60px rgba(17, 24, 39, 0.08);
+      --container: min(900px, calc(100% - 2rem));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background: #ffffff;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 2rem 0 4rem;
+      background:
+        radial-gradient(circle at top left, rgba(82, 183, 136, 0.12), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #fbfcfb 100%);
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--green-dark);
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .legal-card {
+      padding: 2.2rem;
+      border-radius: 28px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(45, 106, 79, 0.1);
+      color: var(--green-dark);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 1rem 0 0.7rem;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      margin: 0 0 2rem;
+      color: var(--muted);
+      font-size: 1.04rem;
+      max-width: 60ch;
+    }
+
+    .legal-section + .legal-section {
+      margin-top: 1.7rem;
+      padding-top: 1.7rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .legal-section h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.18rem;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+
+    .legal-section p {
+      margin: 0;
+      color: var(--muted);
+      white-space: pre-line;
+    }
+
+    .brand-mark {
+      width: 170px;
+      margin-bottom: 1.3rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding-top: 1.2rem;
+      }
+
+      .legal-card {
+        padding: 1.4rem;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <a href="/" class="back-link" aria-label="Zurueck zur Startseite">← Zurueck</a>
+      <section class="legal-card">
+        <img class="brand-mark" src="../cheftrack-transparent.svg" alt="Cheftrack Logo">
+        <span class="eyebrow">Rechtliches</span>
+        <h1>Datenschutzerklaerung</h1>
+        <p class="intro">Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklaerung informiert darueber, wie personenbezogene Daten im Zusammenhang mit Cheftrack verarbeitet werden.</p>
+
+        <div class="legal-section">
+          <h2>1. Allgemeines</h2>
+          <p>Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklaerung informiert darueber, wie personenbezogene Daten im Zusammenhang mit Cheftrack verarbeitet werden.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>2. Verantwortlicher</h2>
+          <p>John Mayer
+Baechlistrasse 9
+8280 Kreuzlingen, Schweiz
+E-Mail: info@cheftrack.ch</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>3. Erhobene Daten</h2>
+          <p>Im Rahmen der Nutzung von Cheftrack koennen folgende Daten erhoben werden:
+- Kontaktdaten (z. B. Name, E-Mail-Adresse)
+- Betriebsdaten (z. B. Restaurantname)
+- Event-Daten (Mengen, Reste, Kosten)
+- Zahlungsdaten (verarbeitet durch Stripe, wir speichern keine Kreditkartendaten selbst)
+- Technische Daten (z. B. IP-Adresse, Geraet, Browser)</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>4. Zweck der Verarbeitung</h2>
+          <p>Die Daten werden verwendet zur:
+- Bereitstellung und Verbesserung der Anwendung
+- Verwaltung von Benutzerkonten
+- Analyse der Nutzung zur Optimierung des Produkts</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>5. Speicherung der Daten</h2>
+          <p>Die Daten werden nur so lange gespeichert, wie es fuer die Nutzung von Cheftrack erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>6. Weitergabe an Dritte</h2>
+          <p>Eine Weitergabe personenbezogener Daten erfolgt nur, wenn dies zur Erbringung der Dienstleistung erforderlich ist, zum Beispiel Stripe oder Supabase, oder gesetzlich vorgeschrieben ist.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>7. Datensicherheit</h2>
+          <p>Es werden angemessene technische und organisatorische Massnahmen getroffen, um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schuetzen.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>8. Rechte der Nutzer</h2>
+          <p>Sie haben das Recht auf Auskunft, Berichtigung oder Loeschung Ihrer gespeicherten Daten sowie auf Einschraenkung der Verarbeitung und Datenuebertragbarkeit.
+
+Sie haben zudem das Recht, Beschwerde bei der zustaendigen Datenschutzbehoerde einzureichen, Schweiz: Eidgenoessischer Datenschutz- und Oeffentlichkeitsbeauftragter, edoeb.admin.ch.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>9. Cookies</h2>
+          <p>Cheftrack verwendet ausschliesslich technisch notwendige Cookies fuer den Login-Prozess. Es werden keine Tracking- oder Werbe-Cookies eingesetzt.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>10. Aenderungen</h2>
+          <p>Diese Datenschutzerklaerung kann bei Bedarf angepasst werden. Nutzer werden bei wesentlichen Aenderungen per E-Mail informiert.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>11. Kontakt</h2>
+          <p>Bei Fragen zum Datenschutz koennen Sie sich jederzeit an info@cheftrack.ch wenden.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
