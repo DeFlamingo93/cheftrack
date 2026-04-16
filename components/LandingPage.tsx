@@ -708,8 +708,8 @@ export function LandingPage({ html }: LandingPageProps) {
       const copy = t();
       if (root) root.ownerDocument.documentElement.lang = currentLanguage === "de" ? "de-CH" : "en";
       root?.querySelector<HTMLAnchorElement>(".brand")?.setAttribute("aria-label", copy.labels.brandAria);
-      navToggle.setAttribute("aria-label", copy.labels.navToggle);
-      navLinks.setAttribute("aria-label", copy.labels.navAria);
+      if (navToggle) navToggle.setAttribute("aria-label", copy.labels.navToggle);
+      if (navLinks) navLinks.setAttribute("aria-label", copy.labels.navAria);
       languageSwitch?.setAttribute("aria-label", copy.labels.languageAria);
       root?.querySelector<HTMLElement>(".currency-switch")?.setAttribute("aria-label", copy.labels.currencyAria);
 
