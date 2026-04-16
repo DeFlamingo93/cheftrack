@@ -685,7 +685,15 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     function queryAll<T extends Element>(selector: string) {
-      return root ? Array.from(root?.querySelectorAll<T>(selector)) : [];
+      return root ? Array.from(root.querySelectorAll<T>(selector)) : [];
+    }
+
+    function setText(element: Element | null | undefined, value: string) {
+      if (element) element.textContent = value;
+    }
+
+    function setHtml(element: Element | null | undefined, value: string) {
+      if (element) element.innerHTML = value;
     }
 
     function updateLanguageSwitch() {
@@ -738,9 +746,9 @@ export function LandingPage({ html }: LandingPageProps) {
       if (listTitle) listTitle.textContent = copy.eventListTitle;
       queryAll<HTMLElement>(".event-row").forEach((row, index) => {
         const data = copy.eventRows[index];
-        row.querySelector("strong")!.textContent = data.title;
-        row.querySelector<HTMLElement>(".event-meta")!.textContent = data.meta;
-        row.querySelector<HTMLElement>(".event-status")!.textContent = data.status;
+        setText(row.querySelector("strong"), data.title);
+        setText(row.querySelector<HTMLElement>(".event-meta"), data.meta);
+        setText(row.querySelector<HTMLElement>(".event-status"), data.status);
       });
       queryAll<HTMLElement>(".bar-list .bar span").forEach((item, index) => {
         item.textContent = copy.barLabels[index];
@@ -759,21 +767,21 @@ export function LandingPage({ html }: LandingPageProps) {
       if (heroCaption) heroCaption.textContent = copy.heroCaption;
 
       const sectionHeadings = queryAll<HTMLElement>(".section-heading");
-      sectionHeadings[1].querySelector(".eyebrow")!.textContent = copy.problem.eyebrow;
-      sectionHeadings[1].querySelector("h2")!.textContent = copy.problem.title;
+      setText(sectionHeadings[1]?.querySelector(".eyebrow"), copy.problem.eyebrow);
+      setText(sectionHeadings[1]?.querySelector("h2"), copy.problem.title);
       queryAll<HTMLElement>(".pain-card").forEach((card, index) => {
-        card.querySelector("strong")!.innerHTML = copy.problem.cards[index].title;
-        card.querySelector("p")!.textContent = copy.problem.cards[index].text;
+        setHtml(card.querySelector("strong"), copy.problem.cards[index].title);
+        setText(card.querySelector("p"), copy.problem.cards[index].text);
       });
       const painStat = root?.querySelector<HTMLElement>(".pain-stat");
       if (painStat) painStat.textContent = copy.problem.stat;
 
-      sectionHeadings[2].querySelector(".eyebrow")!.textContent = copy.solution.eyebrow;
-      sectionHeadings[2].querySelector("h2")!.textContent = copy.solution.title;
-      sectionHeadings[2].querySelector("p")!.textContent = copy.solution.text;
+      setText(sectionHeadings[2]?.querySelector(".eyebrow"), copy.solution.eyebrow);
+      setText(sectionHeadings[2]?.querySelector("h2"), copy.solution.title);
+      setText(sectionHeadings[2]?.querySelector("p"), copy.solution.text);
       queryAll<HTMLElement>(".step-card").forEach((card, index) => {
-        card.querySelector("strong")!.textContent = copy.solution.steps[index].title;
-        card.querySelector("p")!.textContent = copy.solution.steps[index].text;
+        setText(card.querySelector("strong"), copy.solution.steps[index].title);
+        setText(card.querySelector("p"), copy.solution.steps[index].text);
       });
 
       const wowEyebrow = root?.querySelector<HTMLElement>(".wow-panel .eyebrow");
@@ -791,47 +799,49 @@ export function LandingPage({ html }: LandingPageProps) {
       const wowAnnualLabel = root?.querySelector<HTMLElement>(".wow-annual-label");
       if (wowAnnualLabel) wowAnnualLabel.textContent = copy.wow.annualLabel;
 
-      sectionHeadings[3].querySelector(".eyebrow")!.textContent = copy.features.eyebrow;
-      sectionHeadings[3].querySelector("h2")!.textContent = copy.features.title;
-      sectionHeadings[3].querySelector("p")!.textContent = copy.features.text;
+      setText(sectionHeadings[3]?.querySelector(".eyebrow"), copy.features.eyebrow);
+      setText(sectionHeadings[3]?.querySelector("h2"), copy.features.title);
+      setText(sectionHeadings[3]?.querySelector("p"), copy.features.text);
       queryAll<HTMLElement>(".feature-card").forEach((card, index) => {
-        card.querySelector("strong")!.textContent = copy.features.cards[index][0];
-        card.querySelector("p")!.textContent = copy.features.cards[index][1];
+        setText(card.querySelector("strong"), copy.features.cards[index][0]);
+        setText(card.querySelector("p"), copy.features.cards[index][1]);
       });
 
-      sectionHeadings[4].querySelector(".eyebrow")!.textContent = copy.retention.eyebrow;
-      sectionHeadings[4].querySelector("h2")!.textContent = copy.retention.title;
-      sectionHeadings[4].querySelector("p")!.textContent = copy.retention.text;
+      setText(sectionHeadings[4]?.querySelector(".eyebrow"), copy.retention.eyebrow);
+      setText(sectionHeadings[4]?.querySelector("h2"), copy.retention.title);
+      setText(sectionHeadings[4]?.querySelector("p"), copy.retention.text);
       const retentionIntro = root?.querySelector<HTMLElement>(".retention-intro");
       if (retentionIntro) {
-        retentionIntro.querySelector("h3")!.textContent = copy.retention.introTitle;
-        retentionIntro.querySelector("p")!.textContent = copy.retention.introText;
-        retentionIntro.querySelector(".retention-statement")!.textContent = copy.retention.statement;
+        setText(retentionIntro.querySelector("h3"), copy.retention.introTitle);
+        setText(retentionIntro.querySelector("p"), copy.retention.introText);
+        setText(retentionIntro.querySelector(".retention-statement"), copy.retention.statement);
       }
       queryAll<HTMLElement>(".retention-card").forEach((card, index) => {
-        card.querySelector("strong")!.textContent = copy.retention.cards[index][0];
-        card.querySelector("p")!.textContent = copy.retention.cards[index][1];
+        setText(card.querySelector("strong"), copy.retention.cards[index][0]);
+        setText(card.querySelector("p"), copy.retention.cards[index][1]);
       });
 
-      sectionHeadings[5].querySelector(".eyebrow")!.textContent = copy.roi.eyebrow;
-      sectionHeadings[5].querySelector("h2")!.textContent = copy.roi.title;
-      sectionHeadings[5].querySelector("p")!.textContent = copy.roi.text;
+      setText(sectionHeadings[5]?.querySelector(".eyebrow"), copy.roi.eyebrow);
+      setText(sectionHeadings[5]?.querySelector("h2"), copy.roi.title);
+      setText(sectionHeadings[5]?.querySelector("p"), copy.roi.text);
       const resultEl = root?.querySelector(".result-box .small");
       if (resultEl) resultEl.textContent = copy.roi.resultTitle;
       queryAll<HTMLElement>(".testimonial p").forEach((item, index) => {
         item.innerHTML = copy.testimonials[index];
       });
 
-      sectionHeadings[6].querySelector(".eyebrow")!.textContent = copy.pricing.eyebrow;
-      sectionHeadings[6].querySelector("h2")!.textContent = copy.pricing.title;
-      sectionHeadings[6].querySelector("p")!.textContent = copy.pricing.text;
-      billingOptions[0].childNodes[0].textContent = copy.pricing.billing[0];
-      billingOptions[1].childNodes[0].textContent = copy.pricing.billing[1];
+      setText(sectionHeadings[6]?.querySelector(".eyebrow"), copy.pricing.eyebrow);
+      setText(sectionHeadings[6]?.querySelector("h2"), copy.pricing.title);
+      setText(sectionHeadings[6]?.querySelector("p"), copy.pricing.text);
+      const billingOptionOne = billingOptions?.[0]?.childNodes?.[0];
+      const billingOptionTwo = billingOptions?.[1]?.childNodes?.[0];
+      if (billingOptionOne) billingOptionOne.textContent = copy.pricing.billing[0];
+      if (billingOptionTwo) billingOptionTwo.textContent = copy.pricing.billing[1];
       const billingBadge = root?.querySelector<HTMLElement>(".billing-badge");
       if (billingBadge) billingBadge.textContent = copy.pricing.billing[2];
       queryAll<HTMLElement>(".plan-option").forEach((item, index) => {
-        item.querySelector("strong")!.textContent = copy.pricing.picker[index][0];
-        item.querySelector("span")!.textContent = copy.pricing.picker[index][1];
+        setText(item.querySelector("strong"), copy.pricing.picker[index][0]);
+        setText(item.querySelector("span"), copy.pricing.picker[index][1]);
       });
       const popularBadge = root?.querySelector<HTMLElement>(".popular-badge");
       if (popularBadge) popularBadge.textContent = copy.pricing.popularBadge;
@@ -862,9 +872,9 @@ export function LandingPage({ html }: LandingPageProps) {
         item.setAttribute("data-cta-yearly", text);
       });
 
-      sectionHeadings[7].querySelector(".eyebrow")!.textContent = copy.stats.eyebrow;
-      sectionHeadings[7].querySelector("h2")!.textContent = copy.stats.title;
-      sectionHeadings[7].querySelector("p")!.textContent = copy.stats.text;
+      setText(sectionHeadings[7]?.querySelector(".eyebrow"), copy.stats.eyebrow);
+      setText(sectionHeadings[7]?.querySelector("h2"), copy.stats.title);
+      setText(sectionHeadings[7]?.querySelector("p"), copy.stats.text);
       queryAll<HTMLElement>(".stat-card p").forEach((item, index) => {
         item.textContent = copy.stats.cards[index];
       });
@@ -874,17 +884,17 @@ export function LandingPage({ html }: LandingPageProps) {
         if (firstText) firstText.textContent = `${copy.stats.sources} `;
       }
 
-      sectionHeadings[8].querySelector(".eyebrow")!.textContent = copy.faq.eyebrow;
-      sectionHeadings[8].querySelector("h2")!.textContent = copy.faq.title;
+      setText(sectionHeadings[8]?.querySelector(".eyebrow"), copy.faq.eyebrow);
+      setText(sectionHeadings[8]?.querySelector("h2"), copy.faq.title);
       queryAll<HTMLElement>(".faq-item").forEach((item, index) => {
-        item.querySelector(".faq-question span")!.textContent = copy.faq.qa[index][0];
-        item.querySelector<HTMLElement>(".faq-answer p")!.innerHTML = copy.faq.qa[index][1];
+        setText(item.querySelector(".faq-question span"), copy.faq.qa[index][0]);
+        setHtml(item.querySelector<HTMLElement>(".faq-answer p"), copy.faq.qa[index][1]);
       });
       const faqCta = root?.querySelector<HTMLElement>(".faq-cta a");
       if (faqCta) faqCta.textContent = copy.faq.cta;
 
-      sectionHeadings[9].querySelector(".eyebrow")!.textContent = copy.about.eyebrow;
-      sectionHeadings[9].querySelector("h2")!.textContent = copy.about.title;
+      setText(sectionHeadings[9]?.querySelector(".eyebrow"), copy.about.eyebrow);
+      setText(sectionHeadings[9]?.querySelector("h2"), copy.about.title);
       queryAll<HTMLElement>(".about-desktop > p").forEach((item, index) => {
         item.innerHTML = copy.about.desktop[index];
       });
@@ -899,21 +909,21 @@ export function LandingPage({ html }: LandingPageProps) {
 
       const finalSection = root?.querySelector<HTMLElement>("#final-cta");
       if (finalSection) {
-        finalSection.querySelector(".eyebrow")!.textContent = copy.finalCta.eyebrow;
-        finalSection.querySelector("h2")!.textContent = copy.finalCta.title;
-        finalSection.querySelector<HTMLElement>(".final-cta-copy")!.textContent = copy.finalCta.copy;
+        setText(finalSection.querySelector(".eyebrow"), copy.finalCta.eyebrow);
+        setText(finalSection.querySelector("h2"), copy.finalCta.title);
+        setText(finalSection.querySelector<HTMLElement>(".final-cta-copy"), copy.finalCta.copy);
         queryAll<HTMLElement>(".final-cta-trust span").forEach((item, index) => {
           item.textContent = copy.finalCta.trust[index];
         });
-        finalSection.querySelector<HTMLAnchorElement>(".btn-primary")!.textContent = copy.finalCta.button;
-        finalSection.querySelector<HTMLElement>(".final-cta-consent span")!.innerHTML = copy.finalCta.consent;
-        finalSection.querySelector<HTMLElement>(".final-cta-microcopy")!.textContent = copy.finalCta.microcopy;
-        finalSection.querySelector<HTMLElement>(".final-cta-proof")!.textContent = copy.finalCta.proof;
+        setText(finalSection.querySelector<HTMLAnchorElement>(".btn-primary"), copy.finalCta.button);
+        setHtml(finalSection.querySelector<HTMLElement>(".final-cta-consent span"), copy.finalCta.consent);
+        setText(finalSection.querySelector<HTMLElement>(".final-cta-microcopy"), copy.finalCta.microcopy);
+        setText(finalSection.querySelector<HTMLElement>(".final-cta-proof"), copy.finalCta.proof);
       }
 
       const footer = root?.querySelector<HTMLElement>(".footer");
       if (footer) {
-        footer.querySelector("p")!.textContent = copy.footer.tagline;
+        setText(footer.querySelector("p"), copy.footer.tagline);
         queryAll<HTMLElement>(".footer h3").forEach((item, index) => {
           item.textContent = copy.footer.headings[index];
         });
@@ -972,6 +982,28 @@ export function LandingPage({ html }: LandingPageProps) {
 
     function updateCalculator() {
       const copy = t();
+      if (
+        !eventsRange ||
+        !guestsRange ||
+        !reductionRange ||
+        !eventsValue ||
+        !guestsValue ||
+        !reductionValue ||
+        !savingsValue ||
+        !savingsContext ||
+        !calculatorCompareValue ||
+        !wowSavingsValue ||
+        !wowCompareValue ||
+        !wowAnnualValue ||
+        !wowAnnualNote ||
+        !wowEventsBadge ||
+        !wowGuestsBadge ||
+        !wowReductionBadge ||
+        !roiValue ||
+        !savingsCta
+      ) {
+        return;
+      }
       const events = Number(eventsRange.value);
       const guests = Number(guestsRange.value);
       const reductionPercent = Number(reductionRange.value);
@@ -997,9 +1029,9 @@ export function LandingPage({ html }: LandingPageProps) {
       guestsValue.textContent = String(guests);
       reductionValue.textContent = `${reductionPercent}%`;
       const sliderLabels = queryAll<HTMLLabelElement>(".slider-group label");
-      sliderLabels[0].innerHTML = `${copy.roi.labels[0]} <span id="eventsValue">${events}</span>`;
-      sliderLabels[1].innerHTML = `${copy.roi.labels[1]} <span id="guestsValue">${guests}</span>`;
-      sliderLabels[2].innerHTML = `${copy.roi.labels[2]} <span id="reductionValue">${reductionPercent}%</span>`;
+      if (sliderLabels[0]) sliderLabels[0].innerHTML = `${copy.roi.labels[0]} <span id="eventsValue">${events}</span>`;
+      if (sliderLabels[1]) sliderLabels[1].innerHTML = `${copy.roi.labels[1]} <span id="guestsValue">${guests}</span>`;
+      if (sliderLabels[2]) sliderLabels[2].innerHTML = `${copy.roi.labels[2]} <span id="reductionValue">${reductionPercent}%</span>`;
       savingsValue.textContent =
         currentLanguage === "de"
           ? `Bis zu ${formatMoney(annualSavingsChf)} pro Jahr`
@@ -1088,6 +1120,7 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     function updatePricingSummary() {
+      if (!pricingSummary) return;
       const content = t().pricingSummary;
 
       const selected = content[currentPlan as keyof typeof content][
@@ -1170,17 +1203,18 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     const handleNavToggle = () => {
+      if (!navLinks || !navToggle) return;
       const isOpen = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
     };
 
-    navToggle.addEventListener("click", handleNavToggle);
+    navToggle?.addEventListener("click", handleNavToggle);
 
     const anchorLinks = root?.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
-    anchorLinks.forEach((link) => {
+    anchorLinks?.forEach((link) => {
       link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+        if (navLinks) navLinks.classList.remove("open");
+        if (navToggle) navToggle.setAttribute("aria-expanded", "false");
       });
     });
 
