@@ -13,29 +13,29 @@ export function LandingPage({ html }: LandingPageProps) {
     const root = rootRef.current;
     if (!root) return;
 
-    const topbar = root.querySelector<HTMLElement>("#topbar");
-    const navToggle = root.querySelector<HTMLButtonElement>("#navToggle");
-    const navLinks = root.querySelector<HTMLElement>("#navLinks");
-    const eventsRange = root.querySelector<HTMLInputElement>("#eventsRange");
-    const guestsRange = root.querySelector<HTMLInputElement>("#guestsRange");
-    const reductionRange = root.querySelector<HTMLInputElement>("#reductionRange");
-    const eventsValue = root.querySelector<HTMLElement>("#eventsValue");
-    const guestsValue = root.querySelector<HTMLElement>("#guestsValue");
-    const reductionValue = root.querySelector<HTMLElement>("#reductionValue");
-    const savingsValue = root.querySelector<HTMLElement>("#savingsValue");
-    const savingsContext = root.querySelector<HTMLElement>("#savingsContext");
-    const roiValue = root.querySelector<HTMLElement>("#roiValue");
-    const savingsCta = root.querySelector<HTMLElement>("#savingsCta");
-    const pricingSummary = root.querySelector<HTMLElement>("#pricingSummary");
-    const wowSavingsValue = root.querySelector<HTMLElement>("#wowSavingsValue");
-    const wowCompareValue = root.querySelector<HTMLElement>("#wowCompareValue");
-    const wowAnnualValue = root.querySelector<HTMLElement>("#wowAnnualValue");
-    const wowAnnualNote = root.querySelector<HTMLElement>("#wowAnnualNote");
-    const wowEventsBadge = root.querySelector<HTMLElement>("#wowEventsBadge");
-    const wowGuestsBadge = root.querySelector<HTMLElement>("#wowGuestsBadge");
-    const wowReductionBadge = root.querySelector<HTMLElement>("#wowReductionBadge");
-    const calculatorCompareValue = root.querySelector<HTMLElement>("#calculatorCompareValue");
-    const languageSwitch = root.querySelector<HTMLElement>(".language-switch");
+    const topbar = root?.querySelector<HTMLElement>("#topbar");
+    const navToggle = root?.querySelector<HTMLButtonElement>("#navToggle");
+    const navLinks = root?.querySelector<HTMLElement>("#navLinks");
+    const eventsRange = root?.querySelector<HTMLInputElement>("#eventsRange");
+    const guestsRange = root?.querySelector<HTMLInputElement>("#guestsRange");
+    const reductionRange = root?.querySelector<HTMLInputElement>("#reductionRange");
+    const eventsValue = root?.querySelector<HTMLElement>("#eventsValue");
+    const guestsValue = root?.querySelector<HTMLElement>("#guestsValue");
+    const reductionValue = root?.querySelector<HTMLElement>("#reductionValue");
+    const savingsValue = root?.querySelector<HTMLElement>("#savingsValue");
+    const savingsContext = root?.querySelector<HTMLElement>("#savingsContext");
+    const roiValue = root?.querySelector<HTMLElement>("#roiValue");
+    const savingsCta = root?.querySelector<HTMLElement>("#savingsCta");
+    const pricingSummary = root?.querySelector<HTMLElement>("#pricingSummary");
+    const wowSavingsValue = root?.querySelector<HTMLElement>("#wowSavingsValue");
+    const wowCompareValue = root?.querySelector<HTMLElement>("#wowCompareValue");
+    const wowAnnualValue = root?.querySelector<HTMLElement>("#wowAnnualValue");
+    const wowAnnualNote = root?.querySelector<HTMLElement>("#wowAnnualNote");
+    const wowEventsBadge = root?.querySelector<HTMLElement>("#wowEventsBadge");
+    const wowGuestsBadge = root?.querySelector<HTMLElement>("#wowGuestsBadge");
+    const wowReductionBadge = root?.querySelector<HTMLElement>("#wowReductionBadge");
+    const calculatorCompareValue = root?.querySelector<HTMLElement>("#calculatorCompareValue");
+    const languageSwitch = root?.querySelector<HTMLElement>(".language-switch");
 
     if (
       !topbar ||
@@ -64,16 +64,16 @@ export function LandingPage({ html }: LandingPageProps) {
       return;
     }
 
-    const billingOptions = root.querySelectorAll<HTMLElement>(".billing-option");
-    const languageOptions = root.querySelectorAll<HTMLElement>(".language-option");
-    const currencyOptions = root.querySelectorAll<HTMLElement>(".currency-option");
-    const planOptions = root.querySelectorAll<HTMLElement>(".plan-option");
-    const pricingCards = root.querySelectorAll<HTMLElement>(".pricing-card[data-plan]");
-    const priceElements = root.querySelectorAll<HTMLElement>(".price[data-price-monthly-chf]");
-    const priceNotes = root.querySelectorAll<HTMLElement>(".price-note");
-    const planCtas = root.querySelectorAll<HTMLElement>(".plan-cta");
-    const faqItems = root.querySelectorAll<HTMLElement>(".faq-item");
-    const revealItems = root.querySelectorAll<HTMLElement>(".reveal");
+    const billingOptions = root?.querySelectorAll<HTMLElement>(".billing-option");
+    const languageOptions = root?.querySelectorAll<HTMLElement>(".language-option");
+    const currencyOptions = root?.querySelectorAll<HTMLElement>(".currency-option");
+    const planOptions = root?.querySelectorAll<HTMLElement>(".plan-option");
+    const pricingCards = root?.querySelectorAll<HTMLElement>(".pricing-card[data-plan]");
+    const priceElements = root?.querySelectorAll<HTMLElement>(".price[data-price-monthly-chf]");
+    const priceNotes = root?.querySelectorAll<HTMLElement>(".price-note");
+    const planCtas = root?.querySelectorAll<HTMLElement>(".plan-cta");
+    const faqItems = root?.querySelectorAll<HTMLElement>(".faq-item");
+    const revealItems = root?.querySelectorAll<HTMLElement>(".reveal");
 
     const STORAGE_KEY = "cheftrack_currency";
     const LANGUAGE_STORAGE_KEY = "cheftrack_language";
@@ -685,7 +685,7 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     function queryAll<T extends Element>(selector: string) {
-      return root ? Array.from(root.querySelectorAll<T>(selector)) : [];
+      return root ? Array.from(root?.querySelectorAll<T>(selector)) : [];
     }
 
     function updateLanguageSwitch() {
@@ -698,43 +698,43 @@ export function LandingPage({ html }: LandingPageProps) {
 
     function applyTranslations() {
       const copy = t();
-      root.ownerDocument.documentElement.lang = currentLanguage === "de" ? "de-CH" : "en";
-      root.querySelector<HTMLAnchorElement>(".brand")?.setAttribute("aria-label", copy.labels.brandAria);
+      root?.ownerDocument.documentElement.lang = currentLanguage === "de" ? "de-CH" : "en";
+      root?.querySelector<HTMLAnchorElement>(".brand")?.setAttribute("aria-label", copy.labels.brandAria);
       navToggle.setAttribute("aria-label", copy.labels.navToggle);
       navLinks.setAttribute("aria-label", copy.labels.navAria);
       languageSwitch?.setAttribute("aria-label", copy.labels.languageAria);
-      root.querySelector<HTMLElement>(".currency-switch")?.setAttribute("aria-label", copy.labels.currencyAria);
+      root?.querySelector<HTMLElement>(".currency-switch")?.setAttribute("aria-label", copy.labels.currencyAria);
 
       queryAll<HTMLAnchorElement>("#navLinks a").forEach((item, index) => {
         item.textContent = copy.nav[index];
       });
-      const navCta = root.querySelector<HTMLAnchorElement>(".nav-cta");
+      const navCta = root?.querySelector<HTMLAnchorElement>(".nav-cta");
       if (navCta) navCta.textContent = copy.navCta;
 
-      const heroEyebrow = root.querySelector<HTMLElement>(".hero-copy .eyebrow");
+      const heroEyebrow = root?.querySelector<HTMLElement>(".hero-copy .eyebrow");
       if (heroEyebrow) heroEyebrow.textContent = copy.heroEyebrow;
-      const heroTitle = root.querySelector<HTMLElement>(".hero-copy h1");
+      const heroTitle = root?.querySelector<HTMLElement>(".hero-copy h1");
       if (heroTitle) heroTitle.innerHTML = copy.heroTitle;
-      const heroText = root.querySelector<HTMLElement>(".hero-copy p");
+      const heroText = root?.querySelector<HTMLElement>(".hero-copy p");
       if (heroText) heroText.textContent = copy.heroText;
       queryAll<HTMLAnchorElement>(".hero-actions a").forEach((item, index) => {
         item.textContent = copy.heroActions[index];
       });
-      const socialProof = root.querySelector<HTMLElement>(".social-proof span:last-child");
+      const socialProof = root?.querySelector<HTMLElement>(".social-proof span:last-child");
       if (socialProof) socialProof.textContent = copy.socialProof;
 
-      const previewTitle = root.querySelector<HTMLElement>(".preview-title");
+      const previewTitle = root?.querySelector<HTMLElement>(".preview-title");
       if (previewTitle) previewTitle.textContent = copy.previewTitle;
       queryAll<HTMLElement>(".hero-metrics .metric-card span").forEach((item, index) => {
         item.textContent = copy.metricLabels[index];
       });
-      const bestEvent = root.querySelector<HTMLElement>(".metric-card.compact strong");
+      const bestEvent = root?.querySelector<HTMLElement>(".metric-card.compact strong");
       if (bestEvent) bestEvent.innerHTML = copy.bestEvent;
-      const eventButtonLabel = root.querySelector<HTMLElement>(".event-button span:last-child");
+      const eventButtonLabel = root?.querySelector<HTMLElement>(".event-button span:last-child");
       if (eventButtonLabel) eventButtonLabel.textContent = copy.eventButton;
-      const eventButton = root.querySelector<HTMLElement>(".event-button");
+      const eventButton = root?.querySelector<HTMLElement>(".event-button");
       if (eventButton) eventButton.setAttribute("aria-label", copy.eventButton);
-      const listTitle = root.querySelector<HTMLElement>(".event-list-title");
+      const listTitle = root?.querySelector<HTMLElement>(".event-list-title");
       if (listTitle) listTitle.textContent = copy.eventListTitle;
       queryAll<HTMLElement>(".event-row").forEach((row, index) => {
         const data = copy.eventRows[index];
@@ -745,7 +745,7 @@ export function LandingPage({ html }: LandingPageProps) {
       queryAll<HTMLElement>(".bar-list .bar span").forEach((item, index) => {
         item.textContent = copy.barLabels[index];
       });
-      const reportBadge = root.querySelector<HTMLElement>(".report-badge");
+      const reportBadge = root?.querySelector<HTMLElement>(".report-badge");
       if (reportBadge) reportBadge.textContent = copy.reportBadge;
       queryAll<HTMLElement>(".report-item span").forEach((item, index) => {
         item.textContent = copy.reportItems[index];
@@ -755,7 +755,7 @@ export function LandingPage({ html }: LandingPageProps) {
       queryAll<HTMLElement>(".bottom-nav-item").forEach((item, index) => {
         item.textContent = copy.bottomNav[index];
       });
-      const heroCaption = root.querySelector<HTMLElement>(".hero-caption");
+      const heroCaption = root?.querySelector<HTMLElement>(".hero-caption");
       if (heroCaption) heroCaption.textContent = copy.heroCaption;
 
       const sectionHeadings = queryAll<HTMLElement>(".section-heading");
@@ -765,7 +765,7 @@ export function LandingPage({ html }: LandingPageProps) {
         card.querySelector("strong")!.innerHTML = copy.problem.cards[index].title;
         card.querySelector("p")!.textContent = copy.problem.cards[index].text;
       });
-      const painStat = root.querySelector<HTMLElement>(".pain-stat");
+      const painStat = root?.querySelector<HTMLElement>(".pain-stat");
       if (painStat) painStat.textContent = copy.problem.stat;
 
       sectionHeadings[2].querySelector(".eyebrow")!.textContent = copy.solution.eyebrow;
@@ -776,19 +776,19 @@ export function LandingPage({ html }: LandingPageProps) {
         card.querySelector("p")!.textContent = copy.solution.steps[index].text;
       });
 
-      const wowEyebrow = root.querySelector<HTMLElement>(".wow-panel .eyebrow");
+      const wowEyebrow = root?.querySelector<HTMLElement>(".wow-panel .eyebrow");
       if (wowEyebrow) wowEyebrow.textContent = copy.wow.eyebrow;
-      const wowTitle = root.querySelector<HTMLElement>(".wow-panel h3");
+      const wowTitle = root?.querySelector<HTMLElement>(".wow-panel h3");
       if (wowTitle) wowTitle.textContent = copy.wow.title;
-      const wowText = root.querySelector<HTMLElement>(".wow-panel h3 + p");
+      const wowText = root?.querySelector<HTMLElement>(".wow-panel h3 + p");
       if (wowText) wowText.textContent = copy.wow.text;
-      const wowKicker = root.querySelector<HTMLElement>(".wow-kicker");
+      const wowKicker = root?.querySelector<HTMLElement>(".wow-kicker");
       if (wowKicker) wowKicker.textContent = copy.wow.kicker;
-      const wowSubtitle = root.querySelector<HTMLElement>(".wow-subtitle");
+      const wowSubtitle = root?.querySelector<HTMLElement>(".wow-subtitle");
       if (wowSubtitle) wowSubtitle.textContent = copy.wow.subtitle;
-      const wowNote = root.querySelector<HTMLElement>(".wow-note");
+      const wowNote = root?.querySelector<HTMLElement>(".wow-note");
       if (wowNote) wowNote.textContent = copy.wow.note;
-      const wowAnnualLabel = root.querySelector<HTMLElement>(".wow-annual-label");
+      const wowAnnualLabel = root?.querySelector<HTMLElement>(".wow-annual-label");
       if (wowAnnualLabel) wowAnnualLabel.textContent = copy.wow.annualLabel;
 
       sectionHeadings[3].querySelector(".eyebrow")!.textContent = copy.features.eyebrow;
@@ -802,7 +802,7 @@ export function LandingPage({ html }: LandingPageProps) {
       sectionHeadings[4].querySelector(".eyebrow")!.textContent = copy.retention.eyebrow;
       sectionHeadings[4].querySelector("h2")!.textContent = copy.retention.title;
       sectionHeadings[4].querySelector("p")!.textContent = copy.retention.text;
-      const retentionIntro = root.querySelector<HTMLElement>(".retention-intro");
+      const retentionIntro = root?.querySelector<HTMLElement>(".retention-intro");
       if (retentionIntro) {
         retentionIntro.querySelector("h3")!.textContent = copy.retention.introTitle;
         retentionIntro.querySelector("p")!.textContent = copy.retention.introText;
@@ -816,7 +816,7 @@ export function LandingPage({ html }: LandingPageProps) {
       sectionHeadings[5].querySelector(".eyebrow")!.textContent = copy.roi.eyebrow;
       sectionHeadings[5].querySelector("h2")!.textContent = copy.roi.title;
       sectionHeadings[5].querySelector("p")!.textContent = copy.roi.text;
-      root.querySelector(".result-box .small")!.textContent = copy.roi.resultTitle;
+      root?.querySelector(".result-box .small")!.textContent = copy.roi.resultTitle;
       queryAll<HTMLElement>(".testimonial p").forEach((item, index) => {
         item.innerHTML = copy.testimonials[index];
       });
@@ -826,15 +826,15 @@ export function LandingPage({ html }: LandingPageProps) {
       sectionHeadings[6].querySelector("p")!.textContent = copy.pricing.text;
       billingOptions[0].childNodes[0].textContent = copy.pricing.billing[0];
       billingOptions[1].childNodes[0].textContent = copy.pricing.billing[1];
-      const billingBadge = root.querySelector<HTMLElement>(".billing-badge");
+      const billingBadge = root?.querySelector<HTMLElement>(".billing-badge");
       if (billingBadge) billingBadge.textContent = copy.pricing.billing[2];
       queryAll<HTMLElement>(".plan-option").forEach((item, index) => {
         item.querySelector("strong")!.textContent = copy.pricing.picker[index][0];
         item.querySelector("span")!.textContent = copy.pricing.picker[index][1];
       });
-      const popularBadge = root.querySelector<HTMLElement>(".popular-badge");
+      const popularBadge = root?.querySelector<HTMLElement>(".popular-badge");
       if (popularBadge) popularBadge.textContent = copy.pricing.popularBadge;
-      const planHighlight = root.querySelector<HTMLElement>(".plan-highlight");
+      const planHighlight = root?.querySelector<HTMLElement>(".plan-highlight");
       if (planHighlight) planHighlight.textContent = copy.pricing.planHighlight;
       queryAll<HTMLElement>(".plan-tag").forEach((item, index) => {
         item.textContent = copy.pricing.tags[index];
@@ -849,9 +849,9 @@ export function LandingPage({ html }: LandingPageProps) {
           if (nodes[1]) nodes[1].textContent = ` ${label}`;
         });
       });
-      const pricingRoi = root.querySelector<HTMLElement>(".pricing-roi");
+      const pricingRoi = root?.querySelector<HTMLElement>(".pricing-roi");
       if (pricingRoi) pricingRoi.textContent = copy.pricing.roi;
-      const pricingFootnote = root.querySelector<HTMLElement>(".pricing-footnote");
+      const pricingFootnote = root?.querySelector<HTMLElement>(".pricing-footnote");
       if (pricingFootnote) pricingFootnote.textContent = copy.pricing.footnote;
       queryAll<HTMLAnchorElement>(".plan-cta").forEach((item, index) => {
         const text =
@@ -867,7 +867,7 @@ export function LandingPage({ html }: LandingPageProps) {
       queryAll<HTMLElement>(".stat-card p").forEach((item, index) => {
         item.textContent = copy.stats.cards[index];
       });
-      const sources = root.querySelector<HTMLElement>(".stats-sources");
+      const sources = root?.querySelector<HTMLElement>(".stats-sources");
       if (sources) {
         const firstText = sources.childNodes[0];
         if (firstText) firstText.textContent = `${copy.stats.sources} `;
@@ -879,7 +879,7 @@ export function LandingPage({ html }: LandingPageProps) {
         item.querySelector(".faq-question span")!.textContent = copy.faq.qa[index][0];
         item.querySelector<HTMLElement>(".faq-answer p")!.innerHTML = copy.faq.qa[index][1];
       });
-      const faqCta = root.querySelector<HTMLElement>(".faq-cta a");
+      const faqCta = root?.querySelector<HTMLElement>(".faq-cta a");
       if (faqCta) faqCta.textContent = copy.faq.cta;
 
       sectionHeadings[9].querySelector(".eyebrow")!.textContent = copy.about.eyebrow;
@@ -893,10 +893,10 @@ export function LandingPage({ html }: LandingPageProps) {
       queryAll<HTMLElement>(".about-mobile p").forEach((item, index) => {
         item.textContent = copy.about.mobile[index];
       });
-      const aboutCta = root.querySelector<HTMLElement>(".about-cta a");
+      const aboutCta = root?.querySelector<HTMLElement>(".about-cta a");
       if (aboutCta) aboutCta.textContent = copy.about.cta;
 
-      const finalSection = root.querySelector<HTMLElement>("#final-cta");
+      const finalSection = root?.querySelector<HTMLElement>("#final-cta");
       if (finalSection) {
         finalSection.querySelector(".eyebrow")!.textContent = copy.finalCta.eyebrow;
         finalSection.querySelector("h2")!.textContent = copy.finalCta.title;
@@ -910,7 +910,7 @@ export function LandingPage({ html }: LandingPageProps) {
         finalSection.querySelector<HTMLElement>(".final-cta-proof")!.textContent = copy.finalCta.proof;
       }
 
-      const footer = root.querySelector<HTMLElement>(".footer");
+      const footer = root?.querySelector<HTMLElement>(".footer");
       if (footer) {
         footer.querySelector("p")!.textContent = copy.footer.tagline;
         queryAll<HTMLElement>(".footer h3").forEach((item, index) => {
@@ -926,7 +926,7 @@ export function LandingPage({ html }: LandingPageProps) {
         contactNodes.forEach((item, index) => {
           item.textContent = copy.footer.contact[index];
         });
-        const footerBottom = root.querySelector<HTMLElement>(".footer-bottom");
+        const footerBottom = root?.querySelector<HTMLElement>(".footer-bottom");
         if (footerBottom) footerBottom.textContent = copy.footer.bottom;
       }
 
@@ -948,7 +948,7 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     function renderMoneyValues() {
-      root.querySelectorAll<HTMLElement>(".money-value[data-currency-amount]").forEach((element) => {
+      Array.from(root?.querySelectorAll<HTMLElement>(".money-value[data-currency-amount]") ?? []).forEach((element) => {
         const amount = Number(element.dataset.currencyAmount);
         const decimals = Number(element.dataset.currencyDecimals || 0);
         const prefix = element.dataset.moneyPrefix || "";
@@ -1175,7 +1175,7 @@ export function LandingPage({ html }: LandingPageProps) {
 
     navToggle.addEventListener("click", handleNavToggle);
 
-    const anchorLinks = root.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
+    const anchorLinks = root?.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
     anchorLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
