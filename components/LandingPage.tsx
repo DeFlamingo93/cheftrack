@@ -685,7 +685,7 @@ export function LandingPage({ html }: LandingPageProps) {
     }
 
     function queryAll<T extends Element>(selector: string) {
-      return Array.from(root.querySelectorAll<T>(selector));
+      return root ? Array.from(root.querySelectorAll<T>(selector)) : [];
     }
 
     function updateLanguageSwitch() {
