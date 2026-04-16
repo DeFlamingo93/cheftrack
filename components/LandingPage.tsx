@@ -698,7 +698,7 @@ export function LandingPage({ html }: LandingPageProps) {
 
     function applyTranslations() {
       const copy = t();
-      root?.ownerDocument.documentElement.lang = currentLanguage === "de" ? "de-CH" : "en";
+      if (root) root.ownerDocument.documentElement.lang = currentLanguage === "de" ? "de-CH" : "en";
       root?.querySelector<HTMLAnchorElement>(".brand")?.setAttribute("aria-label", copy.labels.brandAria);
       navToggle.setAttribute("aria-label", copy.labels.navToggle);
       navLinks.setAttribute("aria-label", copy.labels.navAria);
@@ -816,7 +816,8 @@ export function LandingPage({ html }: LandingPageProps) {
       sectionHeadings[5].querySelector(".eyebrow")!.textContent = copy.roi.eyebrow;
       sectionHeadings[5].querySelector("h2")!.textContent = copy.roi.title;
       sectionHeadings[5].querySelector("p")!.textContent = copy.roi.text;
-      root?.querySelector(".result-box .small")!.textContent = copy.roi.resultTitle;
+      const resultEl = root?.querySelector(".result-box .small");
+      if (resultEl) resultEl.textContent = copy.roi.resultTitle;
       queryAll<HTMLElement>(".testimonial p").forEach((item, index) => {
         item.innerHTML = copy.testimonials[index];
       });
