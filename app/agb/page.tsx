@@ -7,7 +7,7 @@ export default function AgbPage() {
       eyebrow="Rechtliches"
       title="Allgemeine Geschäftsbedingungen (AGB)"
       intro="Diese AGB regeln die Nutzung von Cheftrack als webbasiertes SaaS-Tool für Gastronomiebetriebe."
-      sections={[...agbSections]}
+      sections={agbSections}
     />
   );
 }

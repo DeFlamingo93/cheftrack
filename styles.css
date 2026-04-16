@@ -160,17 +160,25 @@
       color: var(--green-dark);
     }
 
+    .header-toggles {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      justify-self: end;
+    }
+
+    .language-switch,
     .currency-switch {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
-      justify-self: end;
       padding: 0.3rem;
       border-radius: 999px;
       background: rgba(45, 106, 79, 0.08);
       border: 1px solid rgba(45, 106, 79, 0.12);
     }
 
+    .language-option,
     .currency-option {
       border: 0;
       background: transparent;
@@ -182,6 +190,7 @@
       transition: background 180ms ease, color 180ms ease;
     }
 
+    .language-option.active,
     .currency-option.active {
       background: var(--green-dark);
       color: var(--white);
@@ -1693,7 +1702,7 @@
         display: none;
       }
 
-      .currency-switch {
+      .header-toggles {
         justify-self: end;
       }
 

@@ -10,7 +10,7 @@ type LegalPageProps = {
   eyebrow: string;
   title: string;
   intro: string;
-  sections: LegalSection[];
+  sections: ReadonlyArray<LegalSection>;
 };
 
 export function LegalPage({ eyebrow, title, intro, sections }: LegalPageProps) {

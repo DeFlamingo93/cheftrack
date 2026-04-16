@@ -7,7 +7,7 @@ export default function DatenschutzPage() {
       eyebrow="Rechtliches"
       title="Datenschutzerklärung"
       intro="Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert darüber, wie personenbezogene Daten im Zusammenhang mit Cheftrack verarbeitet werden."
-      sections={[...privacySections]}
+      sections={privacySections}
     />
   );
 }
