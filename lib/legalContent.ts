@@ -99,3 +99,34 @@ export const privacySections = [
     body: "Bei Fragen zum Datenschutz können Sie sich jederzeit an info@cheftrack.ch wenden."
   }
 ] as const;
+
+export const impressumSections = [
+  {
+    title: "Angaben gemäss OR Art. 716a / Anbieterkennzeichnung",
+    body: "John Mayer\nBächlistrasse 9\n8280 Kreuzlingen\nSchweiz"
+  },
+  {
+    title: "Kontakt",
+    body: "E-Mail: info@cheftrack.ch\nTelefon: [TELEFONNUMMER EINTRAGEN]"
+  },
+  {
+    title: "Unternehmens-Identifikationsnummer (UID)",
+    body: "[UID EINTRAGEN — z.B. CHE-123.456.789]\nFalls noch nicht eingetragen: Registrierung beim MWST-Register ab CHF 100'000 Jahresumsatz erforderlich."
+  },
+  {
+    title: "Handelsregistereintrag",
+    body: "[HANDELSREGISTEREINTRAG EINTRAGEN falls vorhanden — z.B. Einzelunternehmen im Handelsregister des Kantons Thurgau]\nFalls noch nicht eingetragen: Eintragungspflicht ab CHF 100'000 Jahresumsatz (Einzelunternehmen)."
+  },
+  {
+    title: "Haftungsausschluss",
+    body: "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich."
+  },
+  {
+    title: "Urheberrecht",
+    body: "Die Inhalte und Werke auf diesen Seiten unterliegen dem Schweizer Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des Autors."
+  },
+  {
+    title: "Streitbeilegung",
+    body: "Für Verbraucherstreitigkeiten steht die Schlichtungsstelle für Konsumstreitigkeiten zur Verfügung (https://www.konsum.admin.ch). Wir sind bereit, an Schlichtungsverfahren teilzunehmen."
+  }
+] as const;
