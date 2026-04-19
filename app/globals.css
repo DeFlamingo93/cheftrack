@@ -432,7 +432,7 @@
 
     .nav {
       display: grid;
-      grid-template-columns: minmax(360px, 460px) auto auto auto;
+      grid-template-columns: minmax(360px, 460px) auto auto auto auto;
       align-items: center;
       gap: 1.25rem;
     }
@@ -567,6 +567,25 @@
     .btn-secondary:focus-visible {
       background: var(--white);
       border-color: rgba(45, 106, 79, 0.38);
+    }
+
+    .btn-login {
+      color: var(--green-dark);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: background 180ms ease;
+    }
+
+    .btn-login:hover,
+    .btn-login:focus-visible {
+      background: var(--green-soft);
+    }
+
+    .nav-app-link {
+      display: none;
     }
 
     .hero {
@@ -2077,6 +2096,19 @@
 
       .nav-cta {
         display: none;
+      }
+
+      .btn-login {
+        display: none;
+      }
+
+      .nav-app-link {
+        display: block;
+        color: var(--green-dark);
+        font-weight: 700;
+        padding: 0.25rem 0;
+        border-top: 1px solid var(--border);
+        margin-top: 0.5rem;
       }
 
       .header-toggles {
