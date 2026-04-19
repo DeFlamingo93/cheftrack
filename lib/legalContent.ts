@@ -107,15 +107,7 @@ export const impressumSections = [
   },
   {
     title: "Kontakt",
-    body: "E-Mail: info@cheftrack.ch\nTelefon: [TELEFONNUMMER EINTRAGEN]"
-  },
-  {
-    title: "Unternehmens-Identifikationsnummer (UID)",
-    body: "[UID EINTRAGEN — z.B. CHE-123.456.789]\nFalls noch nicht eingetragen: Registrierung beim MWST-Register ab CHF 100'000 Jahresumsatz erforderlich."
-  },
-  {
-    title: "Handelsregistereintrag",
-    body: "[HANDELSREGISTEREINTRAG EINTRAGEN falls vorhanden — z.B. Einzelunternehmen im Handelsregister des Kantons Thurgau]\nFalls noch nicht eingetragen: Eintragungspflicht ab CHF 100'000 Jahresumsatz (Einzelunternehmen)."
+    body: "E-Mail: info@cheftrack.ch\nTelefon: +41 78 330 56 80"
   },
   {
     title: "Haftungsausschluss",
